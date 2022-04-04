@@ -20,7 +20,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 
-const drawerWidth = 150;
+const drawerWidth = "140px";
 
 function Nav(props) {
     const { window } = props;
@@ -32,7 +32,7 @@ function Nav(props) {
 
     const drawer = (
         <div>
-            <Box sx={{ p: 2, width: "100%", height: "50px", mb: 3 }}>
+            <Box sx={{ py: 2,height: "50px", mb: 3, textAlign: "center", ml:2 }}>
                 <Typography variant='h6' sx={{ color: "white", fontWeight: "700", textAlign: "center", display: { xs: "none", sm: "none", md: "flex" } }}>NFTICKETS</Typography>
             </Box>
             {['home', 'market', 'create', 'profile'].map((text, index) => {
@@ -127,7 +127,10 @@ function Nav(props) {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'block', md: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: "#424242", stroke: "none" },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: "#424242", stroke: "none",     '&::-webkit-scrollbar': {
+                            display: 'none',
+                          }, },
+                        
                     }}
                 >
                     {drawer}
