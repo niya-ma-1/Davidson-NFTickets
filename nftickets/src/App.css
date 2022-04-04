@@ -14,7 +14,7 @@
 }
 
 .feature-card {
-  height: 20vh;
+  height: 150px;
 }
 
 .feature-card-image {
@@ -22,5 +22,28 @@
   object-fit: cover;
   width: 100%;
   border-radius: 20px;
-  height: 20vh;
+  height: 150px;
+}
+
+.trending-card {
+  height: 200px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.trending-card-image {
+  transition: 1s;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+  height: 200px;
+}
+
+.trending-card-wrapper {
+  border-radius: 20px;
+  background-color: #F5F5F5;
+  height: 100%
+}
+
+.trending-card-wrapper:hover .trending-card {
+  opacity: 8%;
 }
