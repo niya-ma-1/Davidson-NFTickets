@@ -18,7 +18,7 @@
 }
 
 .feature-card-image {
-  transition: 0.3s;
+  transition: 1s;
   object-fit: cover;
   width: 100%;
   border-radius: 20px;
