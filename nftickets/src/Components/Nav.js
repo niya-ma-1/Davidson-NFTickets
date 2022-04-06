@@ -12,6 +12,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import SideBubble from './SideBubble';
@@ -36,7 +38,7 @@ function Nav(props) {
                 <Typography variant='h6' sx={{ color: "white", fontWeight: "700", textAlign: "center", display: { xs: "none", sm: "none", md: "flex" } }}>NFTICKETS</Typography>
             </Box>
             <Box alignItems="center" justifyContent="center" display="flex" flexWrap={"wrap"}>
-                {['home', 'market', 'create', 'profile'].map((text, index) => {
+                {['home', 'market', 'create', 'profile', 'logout'].map((text, index) => {
                     let color1 = "";
                     let color2 = "";
                     let icon = <HomeIcon />
@@ -76,7 +78,17 @@ function Nav(props) {
                             fill: "white"
                         }} />
                         url="/create"
+                    } else if (text === "logout") {
+                        color1 = "#C5C5C5"
+                        color2 = "#979797"
+                        icon = <LogoutIcon sx={{
+                            textAlign: "center",
+                            fontSize: "36px",
+                            fill: "white"
+                        }} />
+                        url="/login"
                     }
+                    
 
                     return <SideBubble page={text} color1={color1} color2={color2} icon={icon} url={url}/>;
                 }
@@ -115,7 +127,7 @@ function Nav(props) {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h5" noWrap component="div" sx={{ color: "white", fontWeight: "700", textAlign: "left", ml: 2}}>
-                            NFTICKETS
+                            DAVIDSON NFTICKETS
                         </Typography>
                     </Toolbar>
                 </AppBar>
