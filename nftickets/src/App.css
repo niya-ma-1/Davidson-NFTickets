@@ -1,16 +1,10 @@
 .side-bubble:hover {
   background-color: #d9d9d9;
+  cursor: pointer;
 }
 
 .side-bubble {
   transition: 0.3s;
-}
-
-.bubble-icon {
-  width: 80px;
-  text-align: center;
-  font-size: 40px;
-  fill: white;
 }
 
 .feature-card {
@@ -47,3 +41,9 @@
 .trending-card-wrapper:hover .trending-card {
   opacity: 8%;
 }
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  color: white !important
+}
+
+

@@ -3,6 +3,14 @@ import { createTheme } from "@mui/material";
 
 
 const theme = createTheme({
+    palette: {
+        type: "dark",
+        primary: { main: "#6FD9E8" },
+        secondary: { main: "#BA6FE8" }
+    },
+    zIndex: {
+        appBar: 1400
+    },
     typography: {
         fontFamily: "Montserrat",
         h1: {
@@ -17,7 +25,9 @@ const theme = createTheme({
             fontSize: "28px",
             fontWeight: "700"
         }
-    }
+    },
+
+
 });
 
 export default theme;

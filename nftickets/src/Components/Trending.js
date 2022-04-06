@@ -20,10 +20,7 @@ const Trending = (props) => {
                 <Typography variant={"p"}>{props.date}</Typography>
             </Grid>
             <Grid item xs={4}>
-                <Button variant="contained" sx={{background: `linear-gradient(to bottom right, ${props.color1}, ${props.color2})`,
-            "&:hover": {
-                boxShadow: `0px 5px 15px ${props.color2}80`
-            }
+                <Button variant="contained" sx={{background: `linear-gradient(to bottom right, ${props.color2}, ${props.color1})`, color: "white"
             }}>TICKETS</Button>
             </Grid>
             <Grid item xs={1}></Grid>

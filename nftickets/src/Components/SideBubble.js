@@ -3,12 +3,14 @@ import HomeIcon from '@mui/icons-material/Home';
 
 
 const SideBubble = (props) => {
-    return <Box sx={{ width: "140px", justifyContent: "center", mb: 2, py: 0.5, textAlign: "center", display: "flex" }}>
-        <Box className="side-bubble" p={1} sx={{ borderRadius: "20px", width: "130px", display: "flex", justifyContent: "center" }}>
+    return <Box sx={{ width: "100px", mb: 2, justifyContent: "center", textAlign: "center", display: "flex" }} onClick={() => {
+        window.location.href = props.url;
+    }}>
+        <Box className="side-bubble" sx={{ width: "90px", py: 0.5, borderRadius: "20px", display: "flex", justifyContent: "center" }}>
             <Box>
                 <Grid container spacing={1} justifyContent="center" alignItems="center">
                     <Grid item xs={12} justifyContent="center" alignItems="center" display="flex">
-                        <Box sx={{ width: "80px", height: "80px", boxShadow: 0, borderRadius: "100%", background: `linear-gradient(to bottom right, ${props.color1}, ${props.color2})`, alignItems: "center", justifyContent: "center", display: "flex" }}>
+                        <Box sx={{ width: "50px", height: "50px", boxShadow: 0, borderRadius: "25px", background: `linear-gradient(to bottom right, ${props.color1}, ${props.color2})`, alignItems: "center", boxShadow: 3, justifyContent: "center", display: "flex" }}>
                             {props.icon}
                         </Box>
                     </Grid>

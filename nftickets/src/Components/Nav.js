@@ -20,7 +20,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 
-const drawerWidth = "140px";
+const drawerWidth = "100px";
 
 function Nav(props) {
     const { window } = props;
@@ -32,129 +32,141 @@ function Nav(props) {
 
     const drawer = (
         <div>
-            <Box sx={{ py: 2,height: "50px", mb: 3, textAlign: "center", ml:2 }}>
+            <Box sx={{ py: 2, height: "50px", mb: 3, textAlign: "center" }}>
                 <Typography variant='h6' sx={{ color: "white", fontWeight: "700", textAlign: "center", display: { xs: "none", sm: "none", md: "flex" } }}>NFTICKETS</Typography>
             </Box>
-            {['home', 'market', 'create', 'profile'].map((text, index) => {
-                let color1 = "";
-                let color2 = "";
-                let icon = <HomeIcon />
-                if (text === "home") {
-                    color1 = "#C3F7FE";
-                    color2 = "#6FD9E8";
-                    icon = <HomeIcon sx={{
-                        width: "80px",
-                        textAlign: "center",
-                        fontSize: "36px",
-                        fill: "white"
-                    }} />
-                } else if (text === "market") {
-                    color1 = "#E7BFFF"
-                    color2 = "#BA6FE8"
-                    icon = <StorefrontIcon sx={{
-                        width: "80px",
-                        textAlign: "center",
-                        fontSize: "36px",
-                        fill: "white"
-                    }} />
-                } else if (text === "profile") {
-                    color1 = "#93E186"
-                    color2 = "#46DE4C"
-                    icon = <PersonIcon sx={{
-                        width: "80px",
-                        textAlign: "center",
-                        fontSize: "36px",
-                        fill: "white"
-                    }} />
-                } else if (text === "create") {
-                    color1 = "#6D7CFF"
-                    color2 = "#4671DE"
-                    icon = <AddIcon sx={{
-                        width: "80px",
-                        textAlign: "center",
-                        fontSize: "36px",
-                        fill: "white"
-                    }} />
-                }
+            <Box alignItems="center" justifyContent="center" display="flex" flexWrap={"wrap"}>
+                {['home', 'market', 'create', 'profile'].map((text, index) => {
+                    let color1 = "";
+                    let color2 = "";
+                    let icon = <HomeIcon />
+                    let url = "/"
+                    if (text === "home") {
+                        color1 = "#C3F7FE";
+                        color2 = "#6FD9E8";
+                        icon = <HomeIcon sx={{
+                            textAlign: "center",
+                            fontSize: "36px",
+                            fill: "white"
+                        }} />
+                    } else if (text === "market") {
+                        color1 = "#E7BFFF"
+                        color2 = "#BA6FE8"
+                        icon = <StorefrontIcon sx={{
+                            textAlign: "center",
+                            fontSize: "36px",
+                            fill: "white"
+                        }} />
+                        url = "/market"
+                    } else if (text === "profile") {
+                        color1 = "#93E186"
+                        color2 = "#46DE4C"
+                        icon = <PersonIcon sx={{
+                            textAlign: "center",
+                            fontSize: "36px",
+                            fill: "white"
+                        }} />
+                        url = "/profile"
+                    } else if (text === "create") {
+                        color1 = "#6D7CFF"
+                        color2 = "#4671DE"
+                        icon = <AddIcon sx={{
+                            textAlign: "center",
+                            fontSize: "36px",
+                            fill: "white"
+                        }} />
+                        url="/create"
+                    }
 
-                return <SideBubble page={text} color1={color1} color2={color2} icon={icon} />;
-            }
-            )}
+                    return <SideBubble page={text} color1={color1} color2={color2} icon={icon} url={url}/>;
+                }
+                )}
+            </Box>
+
         </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar
-                position="fixed"
-                sx={{
-                    width: "100%",
-                    background: "#424242",
-                    stroke: "none"
-                }}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { md: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h5" noWrap component="div" sx={{ color: "white", fontWeight: "700", textAlign: "center", display: { xs: "flex", sm: "flex", md: "none", lg: "none", xl: "none" } }}>
-                        NFTICKETS
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Box
-                component="nav"
-                sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
-                aria-label="mailbox folders"
-            >
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
+        <Box sx={{ pl: 0 }}>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar
+                    position="fixed"
                     sx={{
-                        display: { xs: 'block', sm: 'block', md: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: "#424242", stroke: "none",     '&::-webkit-scrollbar': {
-                            display: 'none',
-                          }, },
-                        
+                        width: "100%",
+                        background: "#424242",
+                        stroke: "none",
+                        boxShadow: 0,
+                        pl: 0,
+                        m: 0
                     }}
                 >
-                    {drawer}
-                </Drawer>
-                <Drawer
-                    variant="permanent"
-                    sx={{
-                        display: { xs: 'none', sm: 'none', md: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: "#424242", stroke: "none" },
-                    }}
-                    open
+                    <CssBaseline />
+                    <Toolbar sx={{ p: 0 }} disableGutters={true}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ display: { md: 'none' }, ml: 2 }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h5" noWrap component="div" sx={{ color: "white", fontWeight: "700", textAlign: "left", ml: 2}}>
+                            NFTICKETS
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <Box
+                    component="nav"
+                    sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
+                    aria-label="mailbox folders"
+                >
+                    {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                    <Drawer
+                        container={container}
+                        variant="temporary"
+                        open={mobileOpen}
+                        onClose={handleDrawerToggle}
+                        ModalProps={{
+                            keepMounted: true, // Better open performance on mobile.
+                        }}
+                        sx={{
+                            display: { xs: 'block', sm: 'block', md: 'none' },
+                            '& .MuiDrawer-paper': {
+                                boxSizing: 'border-box', width: drawerWidth, background: "#424242", stroke: "none", '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                            },
 
+                        }}
+                    >
+                        {drawer}
+                    </Drawer>
+                    <Drawer
+                        variant="permanent"
+                        sx={{
+                            display: { xs: 'none', sm: 'none', md: 'block' },
+                            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: "#424242", stroke: "none" },
+                        }}
+                        open
+
+                    >
+                        {drawer}
+                    </Drawer>
+                </Box>
+                <Box
+                    component="main"
+                    sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` } }}
                 >
-                    {drawer}
-                </Drawer>
-            </Box>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` } }}
-            >
-                <Toolbar />
-                {props.content}
+                    <Toolbar />
+                    {props.content}
+                </Box>
             </Box>
         </Box>
+
     );
 }
 
