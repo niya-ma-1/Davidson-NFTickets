@@ -2,17 +2,19 @@ import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions} fro
 
 
 const TicketCard = (props) => {
-    return <Box  sx={{ ml:2,  "&:hover": { transition: "0.5s", boxShadow: 10, opacity: 15, ml:2 } }} >
+    return <Box  sx={{ m:2 }} >
      <Card sx={{
         //maxWidth: 300, 
         //maxHeight: 300
-        width: '15vw',
-        height: '29vh'
+        borderRadius: "20px",
+        opacity: "100%",
+        "&:hover": { transition: "0.5s", boxShadow: 10 }
         }}>
         <CardMedia
             component="img"
             height="140"
             image={props.imageURL}
+            
         />
             <CardContent>
                 <Typography gutterBottom variant="h10" component="div">
@@ -21,10 +23,8 @@ const TicketCard = (props) => {
                 <Typography variant="body2" color="text.secondary">
                 {props.concertName}, {props.location}, {props.seat}
                 </Typography>
+                <Button sx={{mt: 2}} size="small" variant="contained">Sell</Button>
             </CardContent>
-        <CardActions>
-            <Button size="small" variant="contained">Sell</Button>
-        </CardActions>
     </Card>
 </Box>
 };

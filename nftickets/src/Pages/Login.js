@@ -9,7 +9,7 @@ const Login = (props) => {
     const loginContent = <Box sx={{ background: "#424242", p: 5, minHeight: "91vh" }}>
         <Box sx={{ display: "flex", flexWrap: "wrap" }}>
             <Box>
-                <Typography variant={"h2"} sx={{ color: "white", ml: 2 }}>Log In</Typography>
+                <Typography variant={"h2"} sx={{ color: "white", ml: 2 }}>LOG IN</Typography>
             </Box>
             
             <Grid container spacing={2} sx={{ mt: 0, ml: 0 }}>

@@ -38,7 +38,7 @@ const Home = (props) => {
 
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
-                    <Trending name="Davidson vs. Fordham" date={"3/8/22"} location="Davidson, NC" color1="#494949" color2="#ac1a2f" imageURL={"https://images.unsplash.com/photo-1580692475446-c2fabbbbf835?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"} />
+                    <Trending name="(MBB) Davidson vs. Fordham" date={"3/8/22"} location="Davidson, NC" color1="#494949" color2="#ac1a2f" imageURL={"https://images.unsplash.com/photo-1580692475446-c2fabbbbf835?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"} />
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
                     <Trending name={"[Concert Name]"} date={"5/12/22"} location="Charlotte, NC" color1="#4671DE" color2="#BA6FE8" imageURL={"https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"} />

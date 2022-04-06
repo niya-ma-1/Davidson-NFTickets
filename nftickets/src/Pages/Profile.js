@@ -13,20 +13,20 @@ const Profile = (props) => {
     const profileContent = 
     <Box sx={{ background: "#424242", p: 5, minHeight: "91vh" }}>
         <Box>
-            <Typography variant={"h2"} sx={{ color: "white", ml: 2 , mb: 5}}>Profile</Typography>
+            <Typography variant={"h2"} sx={{ color: "white", ml: 2 , mb: 5}}>👤 PROFILE</Typography>
         </Box>
         <Box>
-            <Typography variant={"h3"} sx={{ color: "white", ml: 2, mb:1}}>Current Tickets</Typography>
+            <Typography variant={"h3"} sx={{ color: "white", ml: 2, mb:1}}>CURRENT TICKETS</Typography>
         </Box>
         <Box sx={{ display: "flex", flexWrap: "wrap", mb: 5 }}>
-            <TicketCard ticketId="123" concertName="concert name" location="location" seat="seat" imageURL="https://cdn1.matadornetwork.com/blogs/1/2010/08/deadliest-concerts-940x626.jpg"/>
-            <TicketCard ticketId="124" concertName="concert name" location="location" seat="seat" imageURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Muse_in_Sydney.jpg/800px-Muse_in_Sydney.jpg"/>
+            <TicketCard ticketId="123" concertName="Concert Name" location="Davidson, NC" seat="Sec. 118 K8" imageURL="https://cdn1.matadornetwork.com/blogs/1/2010/08/deadliest-concerts-940x626.jpg"/>
+            <TicketCard ticketId="124" concertName="Concert Name" location="Davidson, NC" seat="Sec. 118 K8" imageURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Muse_in_Sydney.jpg/800px-Muse_in_Sydney.jpg"/>
         </Box>
         <Box >
-            <Typography variant={"h3"} sx={{ color: "white", ml: 2, mb:1}}>Past Tickets</Typography>
+            <Typography variant={"h3"} sx={{ color: "white", ml: 2, mb:1}}>PAST TICKETS</Typography>
         </Box>
         <Box sx={{ display: "flex", flexWrap: "wrap", mb: 5 }}>
-            <TicketCard ticketId="125" concertName="concert name" location="location" seat="seat" imageURL="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-11/astroworld-kb-main-211109-27be2c.jpg"/>
+            <TicketCard ticketId="125" concertName="Concert Name" location="Davidson, NC" seat="Sec. 118 K8" imageURL="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-11/astroworld-kb-main-211109-27be2c.jpg"/>
         </Box>
         
     </Box>
