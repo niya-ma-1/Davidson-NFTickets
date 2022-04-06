@@ -12,20 +12,24 @@ const Trending = (props) => {
                     src={props.imageURL} />
             </Box>
         </Box>
-        <Grid container spacing={0} sx={{ px: 3, py: 2, m: "auto"}} justifyContent="center" alignItems="flex-end">
-            <Grid item xs={10}>
-                <Typography variant={"h6"} sx={ {fontWeight: 700 }}>{props.name}</Typography>
+        <Grid container spacing={0} sx={{ px: 3, py: 2, m: "auto" }} justifyContent="center" alignItems="flex-start">
+            <Grid item xs={7}>
+                <Typography variant={"h6"} sx={{ fontWeight: 700 }} color="black">{props.name}</Typography>
             </Grid>
-            <Grid item xs={2} sx={{textAlign: "right"}}>
-                <Typography variant={"p"}>{props.date}</Typography>
+            <Grid item xs={5} sx={{ textAlign: "right" }}>
+                <Typography variant={"p"} color="black">{props.date}</Typography>
+                <br/>
+                <Typography variant="p" sx={{ fontSize: 14 }} color="#424242">{props.location}</Typography>
+                <br/>
+                <Button variant="contained" sx={{
+                    mt: 0.5, background: `linear-gradient(to bottom right, ${props.color2}, ${props.color1})`, color: "white", "&:hover": {
+                            boxShadow: 3,
+                            backgroundPosition: "right center",
+                    }
+                }}>TICKETS</Button>
             </Grid>
-            <Grid item xs={4}>
-                <Button variant="contained" sx={{background: `linear-gradient(to bottom right, ${props.color2}, ${props.color1})`, color: "white"
-            }}>TICKETS</Button>
-            </Grid>
-            <Grid item xs={1}></Grid>
-            <Grid item xs={7} sx={{textAlign: "right"}}>
-                <Typography variant="p" sx={{fontSize: 14}}>{props.location}</Typography>
+            <Grid item xs={8}></Grid>
+            <Grid item xs={4} sx={{textAlign: "right"}}>
             </Grid>
         </Grid>
 
